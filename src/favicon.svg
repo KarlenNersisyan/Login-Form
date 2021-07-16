@@ -1,0 +1,81 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2" viewBox="0 0 141.93 141.93" version="1.1">
+  <defs id="defs4">
+    <linearGradient id="linearGradient3013" y2="194.03" gradientUnits="userSpaceOnUse" y1="125.22" x2="231.43" x1="231.43">
+      <stop id="stop3009" stop-color="#fff" offset="0"/>
+      <stop id="stop3011" stop-color="#ccc" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient3023" x1="287.14" gradientUnits="userSpaceOnUse" y1="108.08" gradientTransform="matrix(1.0952 0 0 1.0952 -21.905 -15.055)" x2="287.14" y2="212.36">
+      <stop id="stop3019" stop-color="#59a9ff" offset="0"/>
+      <stop id="stop3021" stop-color="#003fa8" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient3806" y2="166.26" gradientUnits="userSpaceOnUse" y1="96.648" x2="239.92" x1="258.57">
+      <stop id="stop3802" stop-color="#fff" offset="0"/>
+      <stop id="stop3804" stop-color="#fff" stop-opacity="0" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient4198" y2="177.02" gradientUnits="userSpaceOnUse" y1="141.16" x2="234.29" x1="234.29">
+      <stop id="stop4194" stop-color="#09c609" offset="0"/>
+      <stop id="stop4196" stop-color="#105f10" offset="1"/>
+    </linearGradient>
+    <filter id="filter4242" y="-.25" width="1.5" x="-.25" height="1.5">
+      <feGaussianBlur id="feGaussianBlur4244" in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feColorMatrix id="feColorMatrix4246" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 " result="bluralpha"/>
+      <feOffset id="feOffset4248" dy="0" in="bluralpha" dx="0" result="offsetBlur"/>
+      <feMerge id="feMerge4250">
+        <feMergeNode id="feMergeNode4252" in="offsetBlur"/>
+        <feMergeNode id="feMergeNode4254" in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="linearGradient4278" x1="70.206" gradientUnits="userSpaceOnUse" y1="53.288" gradientTransform="matrix(.70941 0 0 .70941 176.56 101.05)" x2="69.195" y2="69.576">
+      <stop id="stop4274" stop-color="#fff" offset="0"/>
+      <stop id="stop4276" stop-color="#fff" stop-opacity="0" offset="1"/>
+    </linearGradient>
+  </defs>
+  <g id="layer1" transform="translate(-159.04 -87.112)">
+    <rect id="rect2985" ry="33.964" height="131.43" width="131.43" stroke="#1d3c6b" y="92.362" x="164.29" stroke-width="10.5" fill="url(#linearGradient3023)"/>
+    <rect id="rect3005" ry="22.15" height="85.714" width="85.714" y="115.22" x="187.14" fill="url(#linearGradient3013)"/>
+    <rect id="rect3005-5" ry="12.753" height="49.349" filter="url(#filter4242)" width="49.349" y="134.16" x="205.07" fill="url(#linearGradient4198)"/>
+    <path id="rect3793" d="m198.25 92.375c-18.816 0-33.969 15.122-33.969 33.938v12.656c13.74-6.95 29.27-10.91 45.72-10.91 36.072 0 67.736 18.851 85.719 47.219v-48.969c0-18.816-15.153-33.938-33.969-33.938h-63.5z" fill="url(#linearGradient3806)"/>
+    <path id="path4270" d="m212.57 150.85v-8.7785s0.89576-2.1498 2.0602-3.1352c1.1645-0.98534 2.956-0.98534 2.956-0.98534h17.647s1.4332 0.17915 2.7769 1.5228c1.3436 1.3436 1.3436 2.7769 1.3436 2.7769v8.7785s-9.7638-5.285-17.378-4.4788c-7.614 0.80618-9.4055 4.2997-9.4055 4.2997z" fill="url(#linearGradient4278)"/>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Radio button ON</dc:title>
+        <dc:date>2012-06-09T10:40:02</dc:date>
+        <dc:description>radio button - ON</dc:description>
+        <dc:source>http://openclipart.org/detail/170497/radio-button-on-by-diamonjohn-170497</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>diamonjohn</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>element</rdf:li>
+            <rdf:li>html</rdf:li>
+            <rdf:li>input</rdf:li>
+            <rdf:li>radio</rdf:li>
+            <rdf:li>radio button</rdf:li>
+            <rdf:li>web</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
+
