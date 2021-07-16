@@ -1,5 +1,41 @@
-import React, { useState } from 'react'
-import './App.css'
+import React, { Component } from 'react';
 
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
 
-export default App
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="flex justify-center mt-40">
+        <form className="border border-white-300" onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+              className="outline-none"
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    );
+  }
+}
+
+export default App;
