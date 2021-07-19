@@ -1,7 +1,12 @@
-// Name-Surname
-export function isValidNameSurname(nameSurname) {
+// Name
+export function isValidName(name) {
     let regex = /^[a-zA-Z ]{2,30}$/;
-    return regex.test(nameSurname);
+    return regex.test(name);
+  }
+// Surname
+export function isValidSurname(surname) {
+    let regex = /^[a-zA-Z ]{2,30}$/;
+    return regex.test(surname);
   }
   //Phone
   export function isValidPhone(phone) {

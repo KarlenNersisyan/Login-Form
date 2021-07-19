@@ -1,6 +1,7 @@
-import Form from "./components/Form";
+import React from 'react';
+import Form from './components/Form';
 
-export default function App() {
+function App() {
   return (
     <div className="App">
       <Form />
@@ -8,3 +9,4 @@ export default function App() {
   );
 }
 
+export default App;
