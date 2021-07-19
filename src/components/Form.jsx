@@ -4,6 +4,7 @@ import Button from '../components/Button/Button';
 import {
   isValidName,
   isValidSurname,
+  isValidGender,
   isValidEmail,
   isValidPhone,
   isValidPassword,
@@ -16,6 +17,7 @@ class Form extends Component {
     this.state = {
       isValidName: true,
       isValidSurname: true,
+      isValidGender: true,
       isValidPhone: true,
       isValidEmail: true,
       isValidPassword: true,
@@ -36,13 +38,14 @@ class Form extends Component {
     });
   };
   handleRegister = (e) => {
-    const { email, name, surname, password, phone } = this.state;
+    const { name, surname, gender, phone, email, password } = this.state;
     e.preventDefault();
     this.setState({
-      isValidEmail: isValidEmail(email),
       isValidName: isValidName(name),
       isValidSurname: isValidSurname(surname),
+      isValidGender: isValidGender(gender),
       isValidPhone: isValidPhone(phone),
+      isValidEmail: isValidEmail(email),
       isValidPassword: isValidPassword(password),
     });
   };
@@ -68,17 +71,36 @@ class Form extends Component {
   }
 
   render() {
-    const nameMessage = this.state.isValidName ? '' : 'Wrong Name';
+    const closeIcon = <i className="fas fa-times-circle"></i>;
+
+    const nameMessage = this.state.isValidName ? '' : closeIcon;
     const hiddenName = this.state.isValidName ? 'hidden' : '';
-    const surnameMessage = this.state.isValidSurname ? '' : 'Wrong Surname';
+    const surnameMessage = this.state.isValidSurname ? '' : closeIcon;
     const hiddenSurname = this.state.isValidSurname ? 'hidden' : '';
-    const phoneMessage = this.state.isValidPhone ? '' : 'Wrong Phone';
+    const genderMessage = this.state.isValidGender ? '' : closeIcon;
+    const hiddenGender = this.state.isValidGender ? 'hidden' : '';
+    const phoneMessage = this.state.isValidPhone ? '' : closeIcon;
     const hiddenPhone = this.state.isValidPhone ? 'hidden' : '';
-    const emailMessage = this.state.isValidEmail ? '' : 'Wrong Email';
+    const emailMessage = this.state.isValidEmail ? '' : closeIcon;
     const hiddenEmail = this.state.isValidEmail ? 'hidden' : '';
-    const passwordMessage = this.state.isValidPassword ? '' : 'Wrong Password';
+    const passwordMessage = this.state.isValidPassword ? '' : closeIcon;
     const hiddenPassword = this.state.isValidPassword ? 'hidden' : '';
 
+    // okMessage
+
+    // const containerMessage = (
+    //   <div className="w-2/4 border rounded-lg h-screen text-center text-green-400 relative"></div>
+    // );
+    // const okMessageContainer =
+    //   this.state.isValidName &&
+    //   this.state.isValidSurname &&
+    //   this.state.isValidGender &&
+    //   this.state.isValidPhone &&
+    //   this.state.isValidEmail &&
+    //   this.state.isValidPassword
+    //     ? containerMessage
+    //     : '';
+    // const okMessageHidden = okMessageContainer ? 'hidden' : '';
     return (
       <form className="flex justify-center">
         <div className="w-96 h-full shadow-byKarlenV1 mt-16 border bg-white rounded-2xl flex flex-col justify-evenly text-center">
@@ -93,25 +115,34 @@ class Form extends Component {
           <div className="mt-3">
             <label>
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
-                Name:{' '}
+                Name:
+                <span
+                  className="text-red-400 ml-px"
+                  {...{ hidden: hiddenName }}
+                >
+                  {nameMessage}
+                </span>
               </p>
               <Input
-                className="placeholder-green-400 outline-none rounded-full border-solid border-purple-500 border-2 shadow-byKarlenV2"
+                className="placeholder-green-400 outline-none rounded-full border-solid border-purple-500 border-2 shadow-byKarlenV2 "
                 type="text"
                 placeholder="Karlen"
                 value={this.state.name}
                 onChange={this.handleChange}
                 name="name"
               />
-              <p className="mt-0 py-3 text-red-400" {...{ hidden: hiddenName }}>
-                {nameMessage}
-              </p>
             </label>
           </div>
           <div className="mt-3">
             <label>
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
-                Surname:{' '}
+                Surname:
+                <span
+                  className="text-red-400 ml-px"
+                  {...{ hidden: hiddenSurname }}
+                >
+                  {surnameMessage}
+                </span>
               </p>
               <Input
                 className="placeholder-green-400 outline-none rounded-full border-solid border-purple-500 border-2 shadow-byKarlenV2"
@@ -121,17 +152,17 @@ class Form extends Component {
                 onChange={this.handleChange}
                 name="surname"
               />
-              <p
-                className="mt-0 py-3 text-red-400"
-                {...{ hidden: hiddenSurname }}
-              >
-                {surnameMessage}
-              </p>
             </label>
           </div>
           <div className="mt-3">
             <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
-              Gender:{' '}
+              Gender:
+              <span
+                className="text-red-400 ml-px"
+                {...{ hidden: hiddenGender }}
+              >
+                {genderMessage}
+              </span>
             </p>
              {' '}
             <label>
@@ -159,7 +190,13 @@ class Form extends Component {
           <div className="mt-3">
             <label>
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
-                Email:{' '}
+                Email:
+                <span
+                  className="text-red-400 ml-px"
+                  {...{ hidden: hiddenEmail }}
+                >
+                  {emailMessage}
+                </span>
               </p>
               <Input
                 className="placeholder-green-400 outline-none rounded-full border-solid border-purple-500 border-2 shadow-byKarlenV2"
@@ -169,18 +206,18 @@ class Form extends Component {
                 onChange={this.handleChange}
                 name="email"
               />
-              <p
-                className="mt-0 py-3 text-red-400"
-                {...{ hidden: hiddenEmail }}
-              >
-                {emailMessage}
-              </p>
             </label>
           </div>
           <div className="mt-3">
             <label>
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
                 Phone Number:{' '}
+                <span
+                  className="text-red-400 ml-px"
+                  {...{ hidden: hiddenPhone }}
+                >
+                  {phoneMessage}
+                </span>
               </p>
               <Input
                 className="placeholder-green-400 outline-none rounded-full border-solid border-purple-500 border-2 shadow-byKarlenV2"
@@ -190,18 +227,18 @@ class Form extends Component {
                 onChange={this.handleChange}
                 name="phone"
               />
-              <p
-                className="mt-0 py-3 text-red-400"
-                {...{ hidden: hiddenPhone }}
-              >
-                {phoneMessage}
-              </p>
             </label>
           </div>
           <div className="mt-3">
             <label>
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
                 Password:
+                <span
+                  className="text-red-400 ml-px"
+                  {...{ hidden: hiddenPassword }}
+                >
+                  {passwordMessage}
+                </span>
               </p>
               <Input
                 className="placeholder-green-400 outline-none rounded-full border-solid border-purple-500 border-2 shadow-byKarlenV2"
@@ -211,12 +248,6 @@ class Form extends Component {
                 onChange={this.handleChange}
                 name="password"
               />
-              <p
-                className="mt-0 py-3 text-red-400"
-                {...{ hidden: hiddenPassword }}
-              >
-                {passwordMessage}
-              </p>
             </label>
           </div>
           <div className="mt-3">
