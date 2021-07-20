@@ -1,0 +1,67 @@
+.byKarlen {
+  top: 20px;
+  left: 33%;
+}
+.ul-container {
+  top: 220px;
+  left: 21%;
+}
+
+input[placeholder] {
+  padding: 0 20px;
+}
+@media screen and (max-width: 580px) {
+  .containerMessage {
+    width: 90%;
+  }
+  .fa-times-hexagon {
+    top: 4%;
+    right: 4%;
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .containerRegister {
+    width: 90%;
+  }
+
+  .titleContainer {
+    font-size: 25px;
+  }
+
+  .labelName {
+    font-size: 17px;
+  }
+
+  .inputName {
+    font-size: 15px;
+  }
+
+  .buttonName {
+    font-size: 15px;
+  }
+
+  .amigo {
+    font-size: 21px;
+  }
+
+  /* containerMessage */
+  .containerMessage {
+    width: 90%;
+  }
+  .fa-times-hexagon {
+    top: 3%;
+    right: 3%;
+    font-size: 33px;
+  }
+  .byKarlen {
+    font-size: 125px;
+    top: 45px;
+  }
+
+  .ul-container {
+    left: 5%;
+    top: 195px;
+    width: 90%;
+  }
+}
