@@ -86,21 +86,6 @@ class Form extends Component {
     const passwordMessage = this.state.isValidPassword ? '' : closeIcon;
     const hiddenPassword = this.state.isValidPassword ? 'hidden' : '';
 
-    // okMessage
-
-    // const containerMessage = (
-    //   <div className="w-2/4 border rounded-lg h-screen text-center text-green-400 relative"></div>
-    // );
-    // const okMessageContainer =
-    //   this.state.isValidName &&
-    //   this.state.isValidSurname &&
-    //   this.state.isValidGender &&
-    //   this.state.isValidPhone &&
-    //   this.state.isValidEmail &&
-    //   this.state.isValidPassword
-    //     ? containerMessage
-    //     : '';
-    // const okMessageHidden = okMessageContainer ? 'hidden' : '';
     return (
       <form className="flex justify-center">
         <div className="w-96 h-full shadow-byKarlenV1 mt-16 border bg-white rounded-2xl flex flex-col justify-evenly text-center">
