@@ -1,6 +1,17 @@
 import React from 'react';
+import '../Input/Input.css'
 
-export default function Input({ type,name, onChange,className, placeholder, value = '' }) {
+export default function Input({
+  type,
+  name,
+  onChange,
+  className,
+  placeholder,
+  value='',
+  checked,
+  required,
+
+}) {
   return (
     <>
       <input
@@ -10,7 +21,8 @@ export default function Input({ type,name, onChange,className, placeholder, valu
         value={value ? value : ''}
         className={className}
         name={name}
-        required
+        checked={checked}
+        required={required}
       />
     </>
   );

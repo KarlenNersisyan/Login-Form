@@ -15,20 +15,18 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isValidName: true,
-      isValidSurname: true,
-      isValidGender: true,
-      isValidPhone: true,
-      isValidEmail: true,
-      isValidPassword: true,
-      name: '',
-      surname: '',
-      gender: '',
-      female: '',
-      male: '',
-      phone: '',
-      email: '',
-      password: '',
+      isValidName: '',
+      isValidSurname: '',
+      isValidGender: '',
+      isValidPhone: '',
+      isValidEmail: '',
+      isValidPassword: '',
+      name: GetItemLocal('name') ? GetItemLocal('name') : '',
+      surname: GetItemLocal('surname') ? GetItemLocal('surname') : '',
+      gender: GetItemLocal('gender') ? GetItemLocal('gender') : '',
+      phone: GetItemLocal('phone') ? GetItemLocal('phone') : '',
+      email: GetItemLocal('email') ? GetItemLocal('email') : '',
+      password: GetItemLocal('password') ? GetItemLocal('password') : '',
     };
   }
   handleChange = (e) => {
@@ -37,6 +35,7 @@ class Form extends Component {
       [name]: value,
     });
   };
+
   handleRegister = (e) => {
     const { name, surname, gender, phone, email, password } = this.state;
     e.preventDefault();
@@ -49,6 +48,7 @@ class Form extends Component {
       isValidPassword: isValidPassword(password),
     });
   };
+
   componentDidUpdate() {
     if (this.state.name) {
       SetItemLocal('name', this.state.name);
@@ -69,22 +69,58 @@ class Form extends Component {
       SetItemLocal('password', this.state.password);
     }
   }
-
   render() {
-    const closeIcon = <i className="fas fa-times-circle"></i>;
+    const closeIcon = <i className="fas fa-times-circle text-red-400"></i>;
+    const okIcon = <i className="fas fa-check-circle text-green-400"></i>;
 
-    const nameMessage = this.state.isValidName ? '' : closeIcon;
-    const hiddenName = this.state.isValidName ? 'hidden' : '';
-    const surnameMessage = this.state.isValidSurname ? '' : closeIcon;
-    const hiddenSurname = this.state.isValidSurname ? 'hidden' : '';
-    const genderMessage = this.state.isValidGender ? '' : closeIcon;
-    const hiddenGender = this.state.isValidGender ? 'hidden' : '';
-    const phoneMessage = this.state.isValidPhone ? '' : closeIcon;
-    const hiddenPhone = this.state.isValidPhone ? 'hidden' : '';
-    const emailMessage = this.state.isValidEmail ? '' : closeIcon;
-    const hiddenEmail = this.state.isValidEmail ? 'hidden' : '';
-    const passwordMessage = this.state.isValidPassword ? '' : closeIcon;
-    const hiddenPassword = this.state.isValidPassword ? 'hidden' : '';
+    const nameMessage =
+      this.state.isValidName == true || this.state.isValidName === ''
+        ? ''
+        : closeIcon;
+    const hiddenName = this.state.isValidName == true ? 'hidden' : '';
+
+    const surnameMessage =
+      this.state.isValidSurname == true || this.state.isValidSurname === ''
+        ? ''
+        : closeIcon;
+    const hiddenSurname = this.state.isValidSurname == true ? 'hidden' : '';
+
+    const genderMessage =
+      this.state.isValidGender == true || this.state.isValidGender === ''
+        ? ''
+        : closeIcon;
+    const hiddenGender = this.state.isValidGender == true ? 'hidden' : '';
+
+    const phoneMessage =
+      this.state.isValidPhone == true || this.state.isValidPhone === ''
+        ? ''
+        : closeIcon;
+    const hiddenPhone = this.state.isValidPhone == true ? 'hidden' : '';
+
+    const emailMessage =
+      this.state.isValidEmail == true || this.state.isValidEmail === ''
+        ? ''
+        : closeIcon;
+    const hiddenEmail = this.state.isValidEmail == true ? 'hidden' : '';
+    const passwordMessage =
+      this.state.isValidPassword == true || this.state.isValidPassword === ''
+        ? ''
+        : closeIcon;
+    const hiddenPassword = this.state.isValidPassword == true ? 'hidden' : '';
+    // okMessage
+    const nameOkMessage = this.state.isValidName == false ? '' : okIcon;
+    const hiddenNameOk = this.state.isValidName == false ? 'hidden' : '';
+    const surnameOkMessage = this.state.isValidSurname == false ? '' : okIcon;
+    const hiddenSurnameOk = this.state.isValidSurname == false ? 'hidden' : '';
+    const genderOkMessage = this.state.isValidGender == false ? '' : okIcon;
+    const hiddenGenderOk = this.state.isValidGender == false ? 'hidden' : '';
+    const emailOkMessage = this.state.isValidEmail == false ? '' : okIcon;
+    const hiddenEmailOk = this.state.isValidEmail == false ? 'hidden' : '';
+    const phoneOkMessage = this.state.isValidPhone == false ? '' : okIcon;
+    const hiddenPhoneOk = this.state.isValidPhone == false ? 'hidden' : '';
+    const passwordOkMessage = this.state.isValidPassword == false ? '' : okIcon;
+    const hiddenPasswordOk =
+      this.state.isValidPassword == false ? 'hidden' : '';
 
     return (
       <form className="flex justify-center">
@@ -102,10 +138,16 @@ class Form extends Component {
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
                 Name:
                 <span
-                  className="text-red-400 ml-px"
+                  className="ml-px"
                   {...{ hidden: hiddenName }}
                 >
                   {nameMessage}
+                </span>
+                <span
+                  className="ml-px"
+                  {...{ hidden: hiddenNameOk }}
+                >
+                  {nameOkMessage}
                 </span>
               </p>
               <Input
@@ -115,6 +157,7 @@ class Form extends Component {
                 value={this.state.name}
                 onChange={this.handleChange}
                 name="name"
+                required
               />
             </label>
           </div>
@@ -123,10 +166,16 @@ class Form extends Component {
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
                 Surname:
                 <span
-                  className="text-red-400 ml-px"
+                  className="ml-px"
                   {...{ hidden: hiddenSurname }}
                 >
                   {surnameMessage}
+                </span>
+                <span
+                  className="ml-px"
+                  {...{ hidden: hiddenSurnameOk }}
+                >
+                  {surnameOkMessage}
                 </span>
               </p>
               <Input
@@ -143,10 +192,16 @@ class Form extends Component {
             <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
               Gender:
               <span
-                className="text-red-400 ml-px"
+                className="ml-px"
                 {...{ hidden: hiddenGender }}
               >
                 {genderMessage}
+              </span>
+              <span
+                className="ml-px"
+                {...{ hidden: hiddenGenderOk }}
+              >
+                {genderOkMessage}
               </span>
             </p>
              {' '}
@@ -158,6 +213,7 @@ class Form extends Component {
                 onChange={this.handleChange}
                 className="cursor-pointer"
                 value="male"
+                checked={this.state.gender === 'male' ? true : false}
               />
             </label>
              {' '}
@@ -169,6 +225,7 @@ class Form extends Component {
                 value="female"
                 onChange={this.handleChange}
                 className="cursor-pointer"
+                checked={this.state.gender === 'female' ? true : false}
               />
             </label>
           </div>
@@ -177,10 +234,16 @@ class Form extends Component {
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
                 Email:
                 <span
-                  className="text-red-400 ml-px"
+                  className="ml-px"
                   {...{ hidden: hiddenEmail }}
                 >
                   {emailMessage}
+                </span>
+                <span
+                  className="ml-px"
+                  {...{ hidden: hiddenEmailOk }}
+                >
+                  {emailOkMessage}
                 </span>
               </p>
               <Input
@@ -190,6 +253,7 @@ class Form extends Component {
                 value={this.state.email}
                 onChange={this.handleChange}
                 name="email"
+                required
               />
             </label>
           </div>
@@ -198,19 +262,26 @@ class Form extends Component {
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
                 Phone Number:{' '}
                 <span
-                  className="text-red-400 ml-px"
+                  className="ml-px"
                   {...{ hidden: hiddenPhone }}
                 >
                   {phoneMessage}
                 </span>
+                <span
+                  className="ml-px"
+                  {...{ hidden: hiddenPhoneOk }}
+                >
+                  {phoneOkMessage}
+                </span>
               </p>
               <Input
                 className="placeholder-green-400 outline-none rounded-full border-solid border-purple-500 border-2 shadow-byKarlenV2"
-                type="text"
+                type="number"
                 placeholder="+37493017153"
                 value={this.state.phone}
                 onChange={this.handleChange}
                 name="phone"
+                required
               />
             </label>
           </div>
@@ -219,10 +290,16 @@ class Form extends Component {
               <p className="text-purple-500 transition cursor-pointer hover:text-green-400 font-bold">
                 Password:
                 <span
-                  className="text-red-400 ml-px"
+                  className="ml-px"
                   {...{ hidden: hiddenPassword }}
                 >
                   {passwordMessage}
+                </span>
+                <span
+                  className="ml-px"
+                  {...{ hidden: hiddenPasswordOk }}
+                >
+                  {passwordOkMessage}
                 </span>
               </p>
               <Input
@@ -232,6 +309,7 @@ class Form extends Component {
                 value={this.state.password}
                 onChange={this.handleChange}
                 name="password"
+                required
               />
             </label>
           </div>
